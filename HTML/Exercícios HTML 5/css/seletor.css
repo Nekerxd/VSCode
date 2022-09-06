@@ -1,0 +1,15 @@
+h1{
+    text-decoration: underline;
+    text-decoration-color: #00FF00;
+    text-align: right;
+    color: #0000ff;}
+.h1diferente {
+    text-decoration: underline;
+    text-decoration-color: #0000FF;
+    text-align: center;
+    color: #FF0000;}
+.nome {
+    text-decoration: underline;
+    text-decoration-color: #FF0000;
+    text-align: left;
+    color: #00FF00;}

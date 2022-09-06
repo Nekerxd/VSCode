@@ -1,0 +1,32 @@
+h1 {
+    color: red;
+    text-align: center;
+    font-family:"lucida handwriting";
+}
+
+body{
+    background: yellow;
+}
+
+p{
+    text-align: justify;
+    color: blue;
+    font-size: 30px;
+    margin: 10px;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.fonte{
+    text-align: right;
+    margin-top: 30px;
+}
+
+strong{
+    font-style: italic;
+    text-decoration: underline;
+}
