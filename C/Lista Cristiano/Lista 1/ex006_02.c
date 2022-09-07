@@ -1,4 +1,4 @@
-//Uma companhia de seguros tem três categorias de seguros baseadas na idade e ocupação do segurado. Somente pessoas com pelo menos 18 anos e não mais de 70 anos podem adquirir apólices de seguros. Quanto às classes de ocupações foram definidos três grupos de risco. A tabela a seguir fornece as categorias em função da faixa de idade e do grupo de risco: 
+//Uma companhia de seguros tem três categorias de seguros baseadas na idade e ocupa??o do segurado. Somente pessoas com pelo menos 18 anos e não mais de 70 anos podem adquirir apólices de seguros. Quanto ?s classes de ocupa??es foram definidos três grupos de risco. A tabela a seguir fornece as categorias em fun??o da faixa de idade e do grupo de risco: 
 //          b   m   a
 // 18 a 24  7   8   9
 // 25 a 40  4   5   6

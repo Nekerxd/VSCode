@@ -7,12 +7,8 @@ int main(){
     setlocale(LC_ALL, "");
     float a, b, c;
     
-    printf("Lado A:");
-    scanf("%f", &a);
-    printf("Lado B:");
-    scanf("%f", &b);
-    printf("Lado C:");
-    scanf("%f", &c);
+    printf("Valores para os lados A, B e C: ");
+    scanf("%f %f %f", &a, &b, &c);
     
     if (a == b && a == c)
         printf("Todos os lados são iguais, logo é um triângulo equilátero");

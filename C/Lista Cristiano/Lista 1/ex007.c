@@ -12,6 +12,7 @@
 int main(){
     setlocale(LC_ALL, "");
     int h_extras, h_falta, minutos;
+    float premio;
 
     printf("Insira a quantidade de horas extras: ");
     scanf("%d", &h_extras);
@@ -21,20 +22,14 @@ int main(){
     minutos = (h_extras*60) - ((2.0/3.0) * (h_falta*60));
 
     if (minutos > 2400)
-    {
-        printf("O valor do prêmio obtido é de R$500");
-    }
-    else if(minutos > 1799 && minutos <2401){
-        printf("O valor do prêmio obtido é de R$400");
-    }
-    else if(minutos < 1801 && minutos > 1199){
-        printf("O valor do prêmio obtido é de R$300");
-    }
+        premio = 500;
+    else if(minutos > 1799 && minutos <2401)
+        premio = 400;
+    else if(minutos < 1801 && minutos > 1199)
+        premio = 300;
     else if (minutos <1201 && minutos > 600)
-    {
-        printf("O valor do prêmio obtido é de R$200");
-    }
-    else{
-        printf("O valor do prêmio obtido é de R$100");
-    }
+        premio = 200;
+    else
+        premio = 100;
+    printf("O valor do prêmio obtido é de R$%.2f", premio);
 }

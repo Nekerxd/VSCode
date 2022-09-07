@@ -8,7 +8,6 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g3",
-				"-Wall",
 				"${file}",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
