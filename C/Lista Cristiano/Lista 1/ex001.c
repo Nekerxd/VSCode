@@ -7,12 +7,8 @@ int main(){
     setlocale(LC_ALL, "");
     int a, b, c, maior, menor, meio;
     
-    printf("Insira A:");
-    scanf("%d", &a);
-    printf("Insira B:");
-    scanf("%d", &b);
-    printf("Insira C:");
-    scanf("%d", &c);
+    printf("Insira os valores de A, B e C: ");
+    scanf("%d %d %d", &a, &b, &c);
 
     if (a > b && a > c)
         maior = a;
