@@ -3,12 +3,12 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: gcc.exe arquivo de build ativo",
+			"label": "Task Debug",
 			"command": "D:\\MinGW\\bin\\gcc.exe",
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g3",
-				"-Wno-all",
+				"-Wall",
 				"${file}",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
@@ -19,10 +19,7 @@
 			"problemMatcher": [
 				"$gcc"
 			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
+			"group": "build",
 			"detail": "compilador: D:\\MinGW\\bin\\gcc.exe"
 		}
 	]
