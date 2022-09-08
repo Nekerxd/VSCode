@@ -25,7 +25,7 @@ void * fatorial(void *arg){
         {
             fat *= x;
         }
-    printf("\n O fatorial de %d é : %llu \n", x, fat);
+    printf("\n O fatorial de %d é : %llu \n", *argument, fat);
 }
 
 // Função para converter dias para o formato anos, meses e dias.
