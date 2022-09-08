@@ -77,13 +77,10 @@ void * primo(void *arg){
 
 int main(){
     setlocale(LC_ALL, "");
-    int num, dias;
-    struct dados{
-        int abc;
-    } estrut[3];
+    int num, dias, abc[3];
     
     printf("\nInsira os valores para A, B e C:\n");
-    scanf("%d %d %d", &estrut[0].abc, &estrut[1].abc, &estrut[2].abc);
+    scanf("%d %d %d", &abc[0], &abc[1], &abc[2]);
     printf("\nInsira a sua idade em dias: ");
     scanf("%d", &dias);
     printf("\nInsira um número para fatorial: ");
@@ -92,11 +89,11 @@ int main(){
     //Declarando minhas threads.
     pthread_t tid_1, tid_2, tid_3, tid_4, tid_5;
     //Iniciando a thread, definindo qual função ela executará e passando um valor como parâmetro.
-    pthread_create(&tid_1, NULL, triangulo, (void *)(&estrut));
+    pthread_create(&tid_1, NULL, triangulo, (void *)(&abc));
     pthread_create(&tid_2, NULL, fatorial, (void *)(&num));
     pthread_create(&tid_3, NULL, idade_conv, (void *)(&dias));
-    pthread_create(&tid_4, NULL, crescente, (void *)(&estrut));
-    pthread_create(&tid_5, NULL, primo, (void *)(&estrut));
+    pthread_create(&tid_4, NULL, crescente, (void *)(&abc));
+    pthread_create(&tid_5, NULL, primo, (void *)(&abc));
     //Join para finalizar a thread antes de finalizar a main().
     pthread_join(tid_1, NULL);
     pthread_join(tid_2, NULL);
