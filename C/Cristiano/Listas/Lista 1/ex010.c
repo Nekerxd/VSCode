@@ -15,7 +15,6 @@ int main(){
         printf("O índice de poluição requer atenção.");
     else if (pollution >= 0.3 && pollution < 0.4)
         printf("As indústrias do 1º grupo devem suspender as suas atividades.");
-    
     else if(pollution >= 0.4 && pollution < 0.5)
         printf("As indústrias do 1º e 2º grupo devem suspender as suas atividades.");
     else

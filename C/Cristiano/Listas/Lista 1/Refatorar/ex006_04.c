@@ -25,3 +25,5 @@ int main(){
         cod = (idade < 25 ? cod = 9 : idade < 41 ? cod = 6 : cod = 3);
     printf("O código do seguro é %d", cod);
 }
+
+//Código atualmente incompleto.

@@ -6,7 +6,9 @@
 int main(){
     setlocale(LC_ALL, "");
     float valor;
+    int new_val;
     printf("Escreva o valor a ser arredondado: ");
     scanf("%f", &valor);
-    printf("%.0f", valor);
+    new_val = valor < 0 ? valor-0.5 : valor+0.5;
+    printf("%.2f será arredondado para %d", valor, new_val);
 }

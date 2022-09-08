@@ -1,4 +1,4 @@
-//Uma empresa decidiu dar uma gratificação de Natal aos seus funcionários, baseada no número de horas extras e no número de horas que o funcionário faltou ao trabalho. O valor do prêmio é obtido pela consulta na tabela a seguir, em que: H = (Número de horas extras) - (2/3 * (Números de horas-falta))
+//Uma empresa decidiu dar uma gratificação de Natal aos seus funcionários, baseada no número de horas extras e no número de horas que o funcionário faltou ao trabalho. O valor do prêmio é obtido pela consulta na tabela a seguir, em que: H = (número de horas extras) - (2/3 * (número de horas-falta))
 //  H (minutos)     Prêmio ($)
 //    >2400           500
 //  1800-2400         400
@@ -23,7 +23,7 @@ int main(){
 
     if (minutos > 2400)
         premio = 500;
-    else if(minutos > 1799 && minutos <2401)
+    else if(minutos > 1799 && minutos < 2401)
         premio = 400;
     else if(minutos < 1801 && minutos > 1199)
         premio = 300;
@@ -31,5 +31,5 @@ int main(){
         premio = 200;
     else
         premio = 100;
-    printf("O valor do prêmio obtido é de R$%.2f", premio);
+    printf("O valor do pr?mio obtido ? de R$%.2f", premio);
 }
