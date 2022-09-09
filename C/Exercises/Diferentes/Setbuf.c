@@ -13,5 +13,5 @@ void main(){
     scanf("%c", &nome);
     printf("Insira sua idade: ");
     scanf("%d", &age);
-    printf("Seu nome é %s e você tem %d anos!");
+    printf("Seu nome é %s e você tem %d anos!", nome, age);
 }
