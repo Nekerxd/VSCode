@@ -9,21 +9,29 @@
 
 int main(){
     setlocale(LC_ALL, "");
-    int idade, cod;
+    int idade, cod, id = 1;
     char categoria;
+    
 
     printf("Insira a idade do segurado e o grupo de risco [B/M/A]: ");
     scanf("%d %c", &idade, &categoria);
 
     if (idade < 18 || idade > 70)
         printf("Essa pessoa não pode mais adquirir apólices de seguros.");
-    else if (categoria == 'B' || categoria == 'b')
-        cod = (idade < 25 ? cod = 7 : idade < 41 ? cod = 4 : cod = 1);
-    else if (categoria == 'M' || categoria == 'm')
-        cod = (idade < 25 ? cod = 8 : idade < 41 ? cod = 5 : cod = 2);
-    else if (categoria == 'A' || categoria == 'a')
-        cod = (idade < 25 ? cod = 9 : idade < 41 ? cod = 6 : cod = 3);
+    else if (categoria == 'B' || categoria == 'b'){
+        if (idade < 25) cod = 7;
+        else if (idade < 41) cod = 4;
+        else cod = 1;
+    }
+    else if (categoria == 'M' || categoria == 'm'){
+        if(idade < 25) cod = 8;
+        else if (idade < 41) cod = 5;
+        else cod = 1;
+    }  
+    else if (categoria == 'A' || categoria == 'a'){
+        if(idade < 25) cod = 9;
+        else if (idade < 41) cod = 6;
+        else cod = 3;
+    }
     printf("O código do seguro é %d", cod);
 }
-
-//Código atualmente incompleto.
