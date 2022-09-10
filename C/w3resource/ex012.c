@@ -12,7 +12,7 @@ int main(){
     printf("%d", check(num1, num2));
 }
 
-int check(x, y){
+int check(int x, int y){
     if ((x > 19 && x < 31) && (y > 19 && y < 31))
     {
         if(x >= y)
