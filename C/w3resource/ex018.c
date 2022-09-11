@@ -15,10 +15,8 @@ int main(){
     printf("%d", check(num1, num2));
 }
 
-bool check(int x, int y){
+int check(int x, int y){
     if ((abs(x + y) == 5 || abs(y - x) == 5) || (x == 5 || y == 5))
-        return true;
-    return false;
+        return 1;
+    return 0;
 }
-
-//Incompleto
