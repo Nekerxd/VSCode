@@ -10,22 +10,24 @@ void * triangulo(void *arg){
     printf("\nO triângulo de lados A, B e C, ");
     if (a == b && a == c)
         printf("possui todos os lados iguais, logo é um triângulo equilátero\n");
-    else if (a != b && a != c & b != c)
+    else if (a != b && a != c && b != c)
         printf("possui todos os lados diferentes, logo é um triângulo escaleno.\n");
     else
         printf("possui dois lados iguais, logo é um triângulo isósceles.\n");
+    return NULL;
 }
 
 // Função para determinar a fatorial de um número.
 void * fatorial(void *arg){
     int *argument = (int *)(arg);
-    unsigned long long int fat;
+    unsigned long int fat;
     int x = *argument;
     for (fat = 1; x > 1; x--)
         {
             fat *= x;
         }
-    printf("\n O fatorial de %d é : %llu \n", *argument, fat);
+    printf("\n O fatorial de %d é : %lu \n", *argument, fat);
+    return NULL;
 }
 
 // Função para converter dias para o formato anos, meses e dias.
@@ -36,7 +38,7 @@ void * idade_conv(void *arg){
     meses = (*idade % 365) / 30;
     dias = (*idade % 365) % 30;
     printf("\nSua idade é igual a %d , %d meses e %d dias.\n", anos, meses, dias);
-    
+    return NULL;
 }
 
 // Função para organizar vetor em ordem crescente
@@ -56,6 +58,7 @@ void * crescente(void *arg){
     for (i = 0; i < 3; i++) {
         printf("[%d] ", vetor[i]);
     }
+    return NULL;
 }
 
 // Função para determinar se determinado número é primo ou não.
@@ -73,6 +76,7 @@ void * primo(void *arg){
         else
             printf("\n%d não é primo\n", vetor[j]); 
     }
+    return NULL;
 }
 
 int main(){
