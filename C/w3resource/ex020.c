@@ -6,7 +6,7 @@
 int main(){
     setlocale(LC_ALL,"");
     int num1;
-    printf("Insira dois nÃºmeros inteiros: ");
+    printf("Insira dois números inteiros: ");
     scanf("%d", &num1);
 
     printf("%d", check(num1));

@@ -5,7 +5,7 @@
 int main(){
     setlocale(LC_ALL, "");
     int num1, num2, num3;
-    printf("Insira trÃªs nÃºmeros: ");
+    printf("Insira três números: ");
     scanf("%d %d %d", &num1, &num2, &num3);
 
     printf("%d", check(num1, num2, num3));
