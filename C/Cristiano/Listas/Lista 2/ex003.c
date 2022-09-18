@@ -10,24 +10,26 @@ int main(){
 
     do
     {
-        printf("Digite um número: ");
+        printf("\nDigite um número: ");
         scanf("%d", &num);
+        
+        if (num > -1){
+            if (num < 26) range1++;
+            else if (num < 51) range2++;
+            else if (num < 76) range3++;
+            else if (num < 101) range4++;
+            else outrange++;
 
-        if (num > -1 && num < 26) range1++;
-        else if (num < 51) range2++;
-        else if (num < 76) range3++;
-        else if (num < 101) range4++;
-        else outrange++;
-
-        if (range1 > 0)
-            printf("\n%d números estão dentro do intervalo [0,25]", range1);
-        if (range2 > 0)
-            printf("\n%d números estão dentro do intervalo [26,50]", range2);
-        if (range3 > 0)
-            printf("\n%d números estão dentro do intervalo [51,75]", range3);
-        if (range4 > 0)
-            printf("\n%d números estão dentro do intervalo [76,100]", range4);
-        if (outrange > 0)
-            printf("\n%d números estão fora dos intervalos", outrange);
+            if (range1 > 0)
+                printf("\n%d números estão dentro do intervalo [0,25]", range1);
+            if (range2 > 0)
+                printf("\n%d números estão dentro do intervalo [26,50]", range2);
+            if (range3 > 0)
+                printf("\n%d números estão dentro do intervalo [51,75]", range3);
+            if (range4 > 0)
+                printf("\n%d números estão dentro do intervalo [76,100]", range4);
+            if (outrange > 0)
+                printf("\n%d números estão fora dos intervalos", outrange);
+        }
     } while (num >-1);
 }
