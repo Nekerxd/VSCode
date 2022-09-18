@@ -11,11 +11,10 @@
 int main(){
     setlocale(LC_ALL, "");
     int filho, totfilho, pessoas, minsal;
-    float salario, mediasal, totalsal, maiorsal, percent;
+    float salario, totalsal, maiorsal, percent;
 
     totfilho = pessoas = minsal = 0;
     salario = totalsal = maiorsal = 0;
-    percent = ((minsal * 100) / pessoas);
 
     while (salario >-1)
     {
@@ -37,5 +36,5 @@ int main(){
     printf("\nA média de filhos é de %d", (totfilho / pessoas));
     printf("\nA média salarial é de R$%.2f", (totalsal / pessoas));
     printf("\nO maior salário é de R$%.2f", maiorsal);
-    printf("\nO percentual de pessoas com salário até R$100,00 é de %.1f%%", percent);
+    printf("\nO percentual de pessoas com salário até R$100,00 é de %.1f%%", (float)((minsal * 100) / pessoas));
 }
