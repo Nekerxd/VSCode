@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 67.5%;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.brief {
+    margin: 5px 0;
+}
+
+.content {
+    margin: 1.5625% 0;
+}
+
+.content-main {
+    float: left;
+    width: 61.7708%;
+}
+
+.hero {
+    margin: 4.2158% 0;
+}
+
+.brief {
+    margin: 0.8431% 0;
+}
+
+.last-contents {
+    font-size: .75em;
+}
+
+.last-content-call {
+    float: left;
+    margin: 2.5295% 2.5295% 2.5295% 0;
+    width: 47.2175%;
+}
+
+.last-content-call .secondary-title {
+    margin-bottom: 0;
+}
+
+.last-content-call .brief {
+    margin: 1.7857%;
+}
+
+.content-sidebar {
+    background-color: #F0F0F0;
+    float: right;
+    padding: 1.0416%;
+    width: 33.5416%;
+}
+
+.main-nav ul {
+    list-style-type: none;
+}
+
+.main-nav li {
+    background-color: #F9F9F9;
+    float: left;
+    margin: 4.6583%;
+    outline: 1px solid #DEDEDE;
+    text-align: center;
+    width: 40.3726%;
+}
+
+.main-nav a {
+    display: block;
+    padding: 7.6923;
+    text-decoration: none;
+}
+
+.main-footer {
+    background-color: #F0F0F0;
+    clear: both;
+    float: left;
+    font-size: .75em;
+    margin: 1.5625% 0;
+    padding: 1.5625%;
+    text-align: center;
+    width: 100%;
+} 

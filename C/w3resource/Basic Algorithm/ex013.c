@@ -2,12 +2,14 @@
 
 #include <stdio.h>
 #include <locale.h>
+#include <math.h>
 
 int main(){
     setlocale(LC_ALL, "");
     unsigned int num1, num2;
     printf("Insira dois números: ");
     scanf("%d %d", &num1, &num2);
+    sqrt(num1);
 
     printf("%d", check(num1, num2));
 }
