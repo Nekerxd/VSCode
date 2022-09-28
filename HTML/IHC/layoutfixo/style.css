@@ -105,14 +105,16 @@ h1 {
 @media all and (max-width: 640px) {
     .content-main {
         float: none;
+        width: 100%;
     }
-
+    
     .last-content-call {
         float: none;
         width: auto;
     }
-
+    
     .content-sidebar {
         float: none;
+        width: 100%;
     }
 }
