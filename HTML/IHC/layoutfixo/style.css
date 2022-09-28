@@ -95,3 +95,24 @@ h1 {
     text-align: center;
     width: 100%;
 } 
+@media all and (max-width: 320px) {
+    .main-nav li {
+        float: none;
+        width: auto;
+    }
+}
+
+@media all and (max-width: 640px) {
+    .content-main {
+        float: none;
+    }
+
+    .last-content-call {
+        float: none;
+        width: auto;
+    }
+
+    .content-sidebar {
+        float: none;
+    }
+}
