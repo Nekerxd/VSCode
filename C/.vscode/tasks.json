@@ -4,7 +4,7 @@
 		{
 			"type": "cppbuild",
 			"label": "Task Debug",
-			"command": "D:\\MinGW\\bin\\gcc.exe",
+			"command": "C:\\MinGW\\bin\\gcc.exe",
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g3",
@@ -20,7 +20,7 @@
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "compilador: D:\\MinGW\\bin\\gcc.exe"
+			"detail": "compilador: C:\\MinGW\\bin\\gcc.exe"
 		}
 	]
 }
