@@ -22,12 +22,12 @@ int main(){
 
     printf("Total de votos por candidato\n");
     for (i = 0; i < C; i++){
-        printf("\nCandidato %d: %d", i, candidato[i]);
+        printf("\nCandidato %d: %d", i+1, candidato[i]);
     }
 
     for (i = 0; i < C; i++){
         vencedor = (candidato[vencedor] > candidato[i] ? vencedor : i);
     }
 
-    printf("\nO vencedor é o canditado %d com %d votos!", vencedor, candidato[vencedor]);
+    printf("\nO vencedor é o canditado %d com %d votos!", vencedor+1, candidato[vencedor]);
 }
