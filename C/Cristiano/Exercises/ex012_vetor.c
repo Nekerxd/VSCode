@@ -14,20 +14,15 @@ int main(){
     for (i = 0; i < N; i++){
         vet[i] = rand()%100;
     }
+    for (i = 0; i < N; i++){
+        if (i == 0)
+            maior = menor = vet[0];
+        maior = vet[i] > maior ? vet[i] : maior;
+        menor = vet[i] < menor ? vet[i] : menor;
+        soma += vet[i];
+    }
 
-    printf("O maior número %d", higher(maior));
-    printf("%d", lower(menor));
-    printf("%d", sum(vet));
-}
-
-int higher(){
-
-}
-
-int lower(){
-
-}
-
-int sum(vet){
-
+    printf("Maior: %d", maior);
+    printf("Menor: %d", menor);
+    printf("Soma: %d", vet);
 }
