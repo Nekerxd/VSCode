@@ -8,19 +8,26 @@ int main(){
     char  jogo[9] = {'_', '_', '_', '_', '_', '_', '_', '_', '_'};
     int jogador = 1, escolha = 0, i, final = 0, empate = 0;
     
+    printf("Para jogar, escolha um número de 1 à 9 para posicionar um \"X\" (jogador 1) ou \"O\" (jogador 2)\n");
+    for (i = 0; i < 9; i++){
+        printf("[%c]\t", jogo[i]);
+        if (i == 2 || i == 5 || i == 8)
+            printf("\n");
+    }
+
     while (final != 1)
     {
         do{
             printf("\nVez do jogador %d: ", jogador);
             scanf("%d", &escolha);
-        } while (jogo[escolha] != '_');
+        } while (jogo[escolha-1] != '_');
 
         if (jogador == 1){
-            jogo[escolha] = 'X';
+            jogo[escolha-1] = 'X';
             jogador++;
         }
         else{
-            jogo[escolha] = 'O';
+            jogo[escolha-1] = 'O';
             jogador--;
         }
 
