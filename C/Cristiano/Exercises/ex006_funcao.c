@@ -1,20 +1,19 @@
-// Uma empresa decide dar um aumento de 30% aos funcion√°rios cujo sal√°rio √© inferior a 500 reais. Escreva um programa que receba o sal√°rio de um funcion√°rio e imprima o valor do sal√°rio reajustado ou uma mensagem caso o funcion√°rio n√£o tenha direito ao aumento.
+//Uma empresa decide dar um aumento de 30% aos funcion·rios cujo sal·rio È inferior a 500 reais. Escreva um programa que receba o sal·rio de um funcion·rio e imprima o valor do sal·rio reajustado ou uma mensagem caso o funcion·rio n„o tenha direito ao aumento. 
 
 #include <stdio.h>
 #include <locale.h>
 
-float ajustesal(float sal);
+float reajuste(float salario);
 
 int main(){
     setlocale(LC_ALL, "");
     float salario;
+    printf("\nInsira o sal·rio atual: R$");
+    scanf("%f", &salario);
 
-    printf("Informe o valor do sal√°rio: ");
-    scanf("%f",&salario);
-    
-    printf("Sal√°rio final: %g\n", ajustesal(salario));
+    printf("\nSal·rio final: R$%.2f", reajuste(salario));
 }
 
-float ajustesal(float sal){
-    return sal < 501 ? sal * 1.3 : sal;
+float reajuste(float salario){
+    return salario < 500 ? salario * 1.3 : salario;
 }
