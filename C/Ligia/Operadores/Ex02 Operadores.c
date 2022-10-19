@@ -22,5 +22,4 @@ void main()
     scanf("%f", &n4);
     md = (n1 + n2 + n3 + n4) / 4;
     printf("O aluno %s obteve a média: %.2f \n", nome, md);
-    system("pause");
 }
