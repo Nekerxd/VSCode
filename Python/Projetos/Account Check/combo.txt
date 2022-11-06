@@ -1,4 +1,3 @@
-atumalaca:147852
 Account:Password
 thalesalkmim:kirito
 pingo:84887936
