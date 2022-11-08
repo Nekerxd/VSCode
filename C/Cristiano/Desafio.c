@@ -4,8 +4,8 @@
 int main(){
     setlocale(LC_ALL, "");
     int i, j, k, qtd_linha, linha_atual, espc, num = 2;
-    while (num % 2 == 0)
-    {
+    
+    while (num % 2 == 0){
         printf("Escolha um número ímpar: ");
         scanf("%d", &num);
     }

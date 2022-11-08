@@ -10,10 +10,12 @@ int main(){
     setlocale(LC_ALL, "");
     int i, j, produtoMercado[V][N], totalMercado[V], totalProduto[N];
 
+    srand(time(NULL));
+
     for (i = 0; i < V; i++){
         for (j = 0; j < N; j++){
             produtoMercado[i][j] = rand() % 101;
-            printf("[%2d]\t", produtoMercado[i][j]);
+            printf("[%.2d]\t", produtoMercado[i][j]);
                 if (j == 0)
                 totalMercado[i] = 0;
             totalMercado[i] += produtoMercado[i][j];
