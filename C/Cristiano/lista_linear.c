@@ -3,17 +3,29 @@
 #include <stdbool.h>
 #define N 10
 
+struct TipoNodo{
+    int codigo;
+    char nome[30];
+    float altura;
+};
+
+typedef struct TipoNodo TipoNodo;
+
 void iniciaLista(int *IL, int *FL, int IA);
-int insertInicio(int LL[], int *FL, int *IL, int IA, int FA, int infoNodo);
-int insertMeio(int LL[], int *FL, int *IL, int IA, int FA, int K, int infoNodo);
-int insertFim(int LL[], int *FL, int *IL, int IA, int FA, int infoNodo);
-int removerNodo(int LL[], int *FL, int *IL, int IA, int FA, int K, int infoNodo);
-void exibirLista(int LL[], int IL, int FL);
-void buscarLista(int LL[], int *FL, int *IL, int valBuscar);
+int insertInicio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo);
+int insertMeio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, int K, TipoNodo infoNodo);
+int insertFim(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo);
+int removerNodo(TipoNodo LL[], int *FL, int *IL, int K);
+void exibirLista(TipoNodo LL[], int IL, int FL);
+void buscarLista(TipoNodo LL[], int *FL, int *IL, int valBuscar);
+
+
 
 int main(){
     setlocale(LC_ALL, "");
-    int IA, FA, IL, FL, op, K, infoNodo, valBuscar, LL[N];
+
+    TipoNodo LL[N], infoNodo;
+    int IA, FA, IL, FL, op, K, valBuscar;
 
     IA = 0;
     FA = N - 1;
@@ -39,20 +51,32 @@ int main(){
             iniciaLista(&IL, &FL, IA);
             break;
         case 2:
-            printf("\nInsira o valor: ");
-            scanf("%d", &infoNodo);
-            insertInit(LL, &FL, &IL, IA, FA, infoNodo);
+            printf("\nInsira o código: ");
+            scanf("%d", &infoNodo.codigo);
+            printf("\nInsira o nome: ");
+            scanf(" %s", &infoNodo.nome);
+            printf("\nInsira a altura: ");
+            scanf("%f", &infoNodo.altura);
+            insertInicio(LL, &FL, &IL, IA, FA, infoNodo);
             break;
         case 3:
             printf("\nPosição da lista para inserção: ");
             scanf("%d", &K);
-            printf("\nInsira o valor: ");
-            scanf("%d", &infoNodo);
+            printf("\nInsira o código: ");
+            scanf("%d", &infoNodo.codigo);
+            printf("\nInsira o nome: ");
+            scanf(" %s", &infoNodo.nome);
+            printf("\nInsira a altura: ");
+            scanf("%f", &infoNodo.altura);
             insertMeio(LL, &FL, &IL, IA, FA, K, infoNodo);
             break;
         case 4:
-            printf("\nInsira o valor: ");
-            scanf("%d", &infoNodo);
+            printf("\nInsira o código: ");
+            scanf("%d", &infoNodo.codigo);
+            printf("\nInsira o nome: ");
+            scanf(" %s", &infoNodo.nome);
+            printf("\nInsira a altura: ");
+            scanf("%f", &infoNodo.altura);
             insertFim(LL, &FL, &IL, IA, FA, infoNodo);
             break;
         case 5:
@@ -62,10 +86,10 @@ int main(){
         case 6:
             printf("\nPosição da lista para remoção: ");
             scanf("%d", &K);
-            removerNodo(LL, &FL, &IL, IA, FA, K, infoNodo);
+            removerNodo(LL, &FL, &IL, K);
             break;
         case 7:
-            printf("\nInsira o valor para a busca: ");
+            printf("\nInsira o código para a busca: ");
             scanf("%d", &valBuscar);
             buscarLista(LL, &FL, &IL, valBuscar);
             break;
@@ -80,7 +104,7 @@ void iniciaLista(int *IL, int *FL, int IA){
     *IL = *FL = IA - 1;
 }
 
-int insertInit(int LL[], int *FL, int *IL, int IA, int FA, int infoNodo){
+int insertInicio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo){
     if ((IA == *IL) && (FA == *FL))
         return 1;
     else{
@@ -99,7 +123,7 @@ int insertInit(int LL[], int *FL, int *IL, int IA, int FA, int infoNodo){
     }
 }
 
-int insertMeio(int LL[], int *FL, int *IL, int IA, int FA, int K, int infoNodo){
+int insertMeio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, int K, TipoNodo infoNodo){
 
     if (((IA == *IL) && (FA == *FL)) || (K > *FL - *IL + 2) || (K <= 0) || (K > FA))
         return 1;
@@ -125,7 +149,7 @@ int insertMeio(int LL[], int *FL, int *IL, int IA, int FA, int K, int infoNodo){
     }
 }
 
-int insertFim(int LL[], int *FL, int *IL, int IA, int FA, int infoNodo){
+int insertFim(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo){
     if ((IA = *IL) && (FA = *FL)) 
         return 1;
     else{
@@ -144,7 +168,7 @@ int insertFim(int LL[], int *FL, int *IL, int IA, int FA, int infoNodo){
     } 
 }
 
-int removerNodo(int LL[], int *FL, int *IL, int IA, int FA, int K, int infoNodo){
+int removerNodo(TipoNodo LL[], int *FL, int *IL, int K){
     if ((K <= 0) || (K > *FL - *IL + 1))
         return 1;
     else
@@ -159,22 +183,22 @@ int removerNodo(int LL[], int *FL, int *IL, int IA, int FA, int K, int infoNodo)
     }
 }
 
-void exibirLista(int LL[], int IL, int FL){
+void exibirLista(TipoNodo LL[], int IL, int FL){
     if (IL == -1)
         printf("\nLista vazia!");
     else{
         for (int i = IL; i <= FL; i++){
-            printf("[%d] ", LL[i]);
+            printf("[%d] [%s] [%.2f]\n", LL[i].codigo, LL[i].nome, LL[i].altura);
         }
     }
 }
 
-void buscarLista(int LL[], int *FL, int *IL, int valBuscar){
+void buscarLista(TipoNodo LL[], int *FL, int *IL, int valBuscar){
     bool achou = false;
     int pos = -1, i = *IL;
     
     while ((i <= *FL) && (!achou)){
-        if (LL[i] == valBuscar){
+        if (LL[i].codigo == valBuscar){
             pos = i;
             achou = true;
         }
@@ -182,7 +206,7 @@ void buscarLista(int LL[], int *FL, int *IL, int valBuscar){
             i += 1;
     }
     if (pos != -1)
-        printf("O valor foi encontrado na posição %d da lista!", pos+1);
+        printf("O código foi encontrado na posição %d da lista!", pos+1);
     else
-        printf("\nValor não encontrado!\n");
+        printf("\nCódigo não encontrado!\n");
 }
