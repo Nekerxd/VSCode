@@ -12,6 +12,7 @@ struct TipoNodo{
 typedef struct TipoNodo TipoNodo;
 
 void iniciaLista(int *IL, int *FL, int IA);
+void preencherNodo(TipoNodo *infoNodo);
 int insertInicio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo);
 int insertMeio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, int K, TipoNodo infoNodo);
 int insertFim(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo);
@@ -51,32 +52,17 @@ int main(){
             iniciaLista(&IL, &FL, IA);
             break;
         case 2:
-            printf("\nInsira o código: ");
-            scanf("%d", &infoNodo.codigo);
-            printf("\nInsira o nome: ");
-            scanf(" %s", &infoNodo.nome);
-            printf("\nInsira a altura: ");
-            scanf("%f", &infoNodo.altura);
+            preencherNodo(&infoNodo);
             insertInicio(LL, &FL, &IL, IA, FA, infoNodo);
             break;
         case 3:
             printf("\nPosição da lista para inserção: ");
             scanf("%d", &K);
-            printf("\nInsira o código: ");
-            scanf("%d", &infoNodo.codigo);
-            printf("\nInsira o nome: ");
-            scanf(" %s", &infoNodo.nome);
-            printf("\nInsira a altura: ");
-            scanf("%f", &infoNodo.altura);
+            preencherNodo(&infoNodo);
             insertMeio(LL, &FL, &IL, IA, FA, K, infoNodo);
             break;
         case 4:
-            printf("\nInsira o código: ");
-            scanf("%d", &infoNodo.codigo);
-            printf("\nInsira o nome: ");
-            scanf(" %s", &infoNodo.nome);
-            printf("\nInsira a altura: ");
-            scanf("%f", &infoNodo.altura);
+            preencherNodo(&infoNodo);
             insertFim(LL, &FL, &IL, IA, FA, infoNodo);
             break;
         case 5:
@@ -102,6 +88,15 @@ int main(){
 
 void iniciaLista(int *IL, int *FL, int IA){
     *IL = *FL = IA - 1;
+}
+
+void preencherNodo(TipoNodo *infoNodo){
+    printf("\nInsira o código: ");
+    scanf("%d", &infoNodo->codigo);
+    printf("\nInsira o nome: ");
+    scanf(" %s", &infoNodo->nome);
+    printf("\nInsira a altura: ");
+    scanf("%f", &infoNodo->altura);
 }
 
 int insertInicio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo){
