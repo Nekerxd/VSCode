@@ -3,20 +3,18 @@
 #include <stdbool.h>
 #define N 10
 
-struct TipoNodo{
+typedef struct TipoNodo{
     int codigo;
     char nome[30];
     float altura;
-};
-
-typedef struct TipoNodo TipoNodo;
+}TipoNodo;
 
 void iniciaLista(int *IL, int *FL, int IA);
 void preencherNodo(TipoNodo *infoNodo);
-void ordenarID(TipoNodo LL[], int *FL, int *IL);
 int insertFim(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo);
-int removerNodo(TipoNodo LL[], int *FL, int *IL);
 void exibirLista(TipoNodo LL[], int IL, int FL);
+int removerNodo(TipoNodo LL[], int *FL, int *IL);
+void ordenarID(TipoNodo LL[], int *FL, int *IL);
 int buscarLista(TipoNodo LL[], int *FL, int *IL, int valBuscar);
 
 int main(){
@@ -25,9 +23,7 @@ int main(){
     TipoNodo LL[N], infoNodo;
     int IA, FA, IL, FL, op, K, valBuscar;
 
-    IA = 0;
-    FA = N - 1;
-    op = 1;
+    IA = 0; FA = N - 1; op = 1;
 
     iniciaLista(&IL, &FL, IA);
 
@@ -35,10 +31,10 @@ int main(){
         printf("\n\n====== Lista Linear Sequencial ======\n\n"
         "Escolha uma das seguintes opções: \n"
         "[1] Limpar lista\n"
-        "[2] Inserir ao fim\n"
+        "[2] Inserção no fim\n"
         "[3] Exibir lista\n"
-        "[4] Remover nodo\n"
-        "[5] Encontrar na lista\n"
+        "[4] Remoção no início\n"
+        "[5] Busca binária (com vetor ordenado)\n"
         "[6] Encerrar lista\n:");
         scanf("%d", &op);
 
@@ -60,13 +56,13 @@ int main(){
         case 5:
             printf("\nInsira o código para a busca: ");
             scanf("%d", &valBuscar);
+            ordenarID(LL, &FL, &IL);
             printf("O valor %d foi encontrado na posição %d da lista!", valBuscar, buscarLista(LL, &FL, &IL, valBuscar));
             break;
         default:
             printf("Lista encerrada!");
             break;
         }
-        ordenarID(LL, &FL, &IL);
     }
 }
 
@@ -135,7 +131,7 @@ int buscarLista(TipoNodo LL[], int *FL, int *IL, int valBuscar){
     while ((inf <= sup) && (!achou)){
         meio = (inf + sup)/2;
         if (LL[meio].codigo == valBuscar){
-            posicao = meio;
+            posicao = meio+1;
             achou = true;
         }
         else if (LL[meio].codigo < valBuscar)
