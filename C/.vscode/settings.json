@@ -4,5 +4,6 @@
         "locale.h": "c",
         "stdlib.h": "c",
         "stdio.h": "c",
+        "A.C": "cpp"
     },
 }

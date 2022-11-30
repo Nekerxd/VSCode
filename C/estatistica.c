@@ -21,11 +21,15 @@ int main(){
         "\nQual a fórmula desejada: ");
         scanf("%d", &op2);
 
+        Confi = 1;
         if (op2 > 0 && op2 < 5){
-            printf("\nQual o grau de confiança? (Em porcentagem): ");
-            scanf("%d", &Confi);
-            CritVal = (Confi == 99 ? 2.575 : Confi == 95 ? 1.96 : 1.6450);
+            while (Confi != 99 && Confi != 95 && Confi != 90){
+                printf("\nQual o grau de confiança? (Em porcentagem): ");
+                scanf("%d", &Confi);
+            }
 
+            CritVal = (Confi == 99 ? 2.575 : Confi == 95 ? 1.96 : 1.6450);
+            
             switch (op2)
             {
             case 1:
@@ -97,8 +101,8 @@ void IntervaloMedia(float N, float DP, float Media, float EM, float CritVal, flo
     EM = (CritVal * (DP / sqrt(N)));
     ICM[0] = Media - EM; ICM[1] = Media + EM;
 
-    printf("\nErro amostral da média (Em) = %.2f"
-    "\nIntervalo de confiança da média (IC) = (%.2f ; %.2f)\n", EM, ICM[0], ICM[1]);
+    printf("\nErro amostral da média (Em) = %f"
+    "\nIntervalo de confiança da média (IC) = (%f ; %f)\n", EM, ICM[0], ICM[1]);
 }
 
 void AmostraProp(float N, float P, float EP, float CritVal){
