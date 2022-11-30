@@ -101,8 +101,8 @@ void IntervaloMedia(float N, float DP, float Media, float EM, float CritVal, flo
     EM = (CritVal * (DP / sqrt(N)));
     ICM[0] = Media - EM; ICM[1] = Media + EM;
 
-    printf("\nErro amostral da média (Em) = %f"
-    "\nIntervalo de confiança da média (IC) = (%f ; %f)\n", EM, ICM[0], ICM[1]);
+    printf("\nErro amostral da média (Em) = %.2f"
+    "\nIntervalo de confiança da média (IC) = (%.2f ; %.2f)\n", EM, ICM[0], ICM[1]);
 }
 
 void AmostraProp(float N, float P, float EP, float CritVal){

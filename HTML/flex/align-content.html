@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Align Content</title>
+    <style>
+        .flex-container{
+            display: flex;
+            height: 350px;
+            max-width: 300px;
+            flex-wrap: wrap;
+            border: 2px solid black;
+        }
+
+        .item{
+            background-color: aqua;
+            padding: 5px;
+            flex: 1;
+            text-align: center;
+            color: white;
+            margin: 5px;
+        }
+
+        .stretch{
+            align-content: stretch;
+        }
+
+        .center{
+            align-content: center;
+        }
+
+        .flex-start{
+            align-content: flex-start;
+        }
+
+        .flex-end{
+            align-content: flex-end;
+        }
+
+        .space-around{
+            align-content: space-around;
+        }
+
+        .space-between{
+            align-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Stretch</p>
+    <div class="flex-container stretch">
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis</div>
+        <div class="item">Quem manda na minha terra sou euzis!</div>
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. </div>
+        <div class="item">Cevadis im ampola pa arma uma pindureta.</div>
+        <div class="item">Quem num gosta di mé, boa gentis num é.</div>
+        <div class="item">Sed non consequat odio.</div>
+        <div class="item">Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!</div>
+    </div>
+
+    <p>Center</p>
+    <div class="flex-container center">
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis</div>
+        <div class="item">Quem manda na minha terra sou euzis!</div>
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. </div>
+        <div class="item">Cevadis im ampola pa arma uma pindureta.</div>
+        <div class="item">Quem num gosta di mé, boa gentis num é.</div>
+        <div class="item">Sed non consequat odio.</div>
+        <div class="item">Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!</div>
+    </div>
+
+    <p>Flex-Start</p>
+    <div class="flex-container flex-start">
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis</div>
+        <div class="item">Quem manda na minha terra sou euzis!</div>
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. </div>
+        <div class="item">Cevadis im ampola pa arma uma pindureta.</div>
+        <div class="item">Quem num gosta di mé, boa gentis num é.</div>
+        <div class="item">Sed non consequat odio.</div>
+        <div class="item">Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!</div>
+    </div>
+
+    <p>Flex-End</p>
+    <div class="flex-container flex-end">
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis</div>
+        <div class="item">Quem manda na minha terra sou euzis!</div>
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. </div>
+        <div class="item">Cevadis im ampola pa arma uma pindureta.</div>
+        <div class="item">Quem num gosta di mé, boa gentis num é.</div>
+        <div class="item">Sed non consequat odio.</div>
+        <div class="item">Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!</div>
+    </div>
+
+    <p>Space-Around</p>
+    <div class="flex-container space-around">
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis</div>
+        <div class="item">Quem manda na minha terra sou euzis!</div>
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. </div>
+        <div class="item">Cevadis im ampola pa arma uma pindureta.</div>
+        <div class="item">Quem num gosta di mé, boa gentis num é.</div>
+        <div class="item">Sed non consequat odio.</div>
+        <div class="item">Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!</div>
+    </div>
+
+    <p>Space-Between</p>
+    <div class="flex-container space-between">
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis</div>
+        <div class="item">Quem manda na minha terra sou euzis!</div>
+        <div class="item">Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. </div>
+        <div class="item">Cevadis im ampola pa arma uma pindureta.</div>
+        <div class="item">Quem num gosta di mé, boa gentis num é.</div>
+        <div class="item">Sed non consequat odio.</div>
+        <div class="item">Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!</div>
+    </div>
+</body>
+</html>
