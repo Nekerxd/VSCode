@@ -36,10 +36,10 @@ int main(){
 
     while (op > 0 && op < 8){
         printf("\n\n====== Lista Linear Sequencial ======\n\n"
-        "Escolha uma das seguintes op??es: \n"
+        "Escolha uma das seguintes opções: \n"
         "[1] Limpar lista\n"
-        "[2] Inserir no in?cio\n"
-        "[3] Inserir em uma posi??o\n"
+        "[2] Inserir no início\n"
+        "[3] Inserir em uma posição\n"
         "[4] Inserir ao fim\n"
         "[5] Exibir lista\n"
         "[6] Remover nodo\n"
@@ -56,7 +56,7 @@ int main(){
             insertInicio(LL, &FL, &IL, IA, FA, infoNodo);
             break;
         case 3:
-            printf("\nPosi??o da lista para inser??o: ");
+            printf("\nPosição da lista para inserção: ");
             scanf("%d", &K);
             preencherNodo(&infoNodo);
             insertMeio(LL, &FL, &IL, IA, FA, K, infoNodo);
@@ -66,16 +66,16 @@ int main(){
             insertFim(LL, &FL, &IL, IA, FA, infoNodo);
             break;
         case 5:
-            printf("A sua lista atualmente ?: \n");
+            printf("A sua lista atualmente é: \n");
             exibirLista(LL, IL, FL);
             break;
         case 6:
-            printf("\nPosi??o da lista para remo??o: ");
+            printf("\nPosi??o da lista para remoção: ");
             scanf("%d", &K);
             removerNodo(LL, &FL, &IL, K);
             break;
         case 7:
-            printf("\nInsira o c?digo para a busca: ");
+            printf("\nInsira o código para a busca: ");
             scanf("%d", &valBuscar);
             buscarLista(LL, &FL, &IL, valBuscar);
             break;
@@ -91,7 +91,7 @@ void iniciaLista(int *IL, int *FL, int IA){
 }
 
 void preencherNodo(TipoNodo *infoNodo){
-    printf("\nInsira o c?digo: ");
+    printf("\nInsira o código: ");
     scanf("%d", &infoNodo->codigo);
     printf("\nInsira o nome: ");
     scanf(" %s", &infoNodo->nome);
@@ -166,11 +166,12 @@ int insertFim(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo
 }
 
 int removerNodo(TipoNodo LL[], int *FL, int *IL, int K){
+    int i;
     if ((K <= 0) || (K > *FL - *IL + 1))
         return 1;
     else
     {
-        for (int i = (*IL+K-1); i <= *FL; i++){
+        for (i = (*IL+K-1); i <= *FL; i++){
             LL[i] = LL[i+1];
         }
         *FL -= 1;
@@ -204,7 +205,7 @@ void buscarLista(TipoNodo LL[], int *FL, int *IL, int valBuscar){
             i += 1;
     }
     if (pos != -1)
-        printf("O c?digo foi encontrado na posi??o %d da lista!", pos+1);
+        printf("O código foi encontrado na posição %d da lista!", pos+1);
     else
-        printf("\nC?digo n?o encontrado!\n");
+        printf("\nCódigo não encontrado!\n");
 }
