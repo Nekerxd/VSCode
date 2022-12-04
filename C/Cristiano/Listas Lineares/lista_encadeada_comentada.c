@@ -2,10 +2,12 @@
 #include <stdio.h>
 #include <locale.h>
 
-typedef struct tipoNodo{
+struct tipoNodo{
     int Info;
     struct tipoNodo *Elo;
-}TipoNodo;
+};
+
+typedef struct tipoNodo TipoNodo;
 
 //Protótipos
 int menu(void);
@@ -85,34 +87,54 @@ int menu(void){
 //Inserção no fim da lista encadeada
 int insereFim(TipoNodo **PtLista, int Dados){
     TipoNodo* ptAux;
+    // Cria um novo nodo e aloca espaço na memória
     TipoNodo* PtNovo = (TipoNodo*) malloc(sizeof(TipoNodo));
+    //Nodo está vazio?
     if (PtNovo == NULL)
+        //Retorna 1 para erro
         return 1;
+    //Nodo não está fazio?
     else{
+        //Novo nodo recebe os dados desejados
         PtNovo->Info = Dados;
+        //Novo nodo aponta para vazio
         PtNovo->Elo = NULL;
+        //Lista vazia?
         if (*PtLista == NULL)
+            //Lista aponta para Novo nodo
             *PtLista = PtNovo;
+        //Lista não está vazia?
         else{
+            //Nodo auxiliar recebe o conteúdo da lista
             ptAux = *PtLista;
+            //Enquanto não encontrar o último elemento que aponta para vazio, passa para o proximo elo
             while (ptAux->Elo != NULL){
                 ptAux = ptAux->Elo;
             }
+            //Faz o último elemento apontar para o Novo nodo
             ptAux->Elo = PtNovo;
             }
+        //Retorna 0 para sucesso
         return 0;
     }
 }
 
 //Inserção no início da lista encadeada
 int insereIni(TipoNodo **PtLista, int Dados){
+    // Cria um novo nodo e aloca espaço na memória
     TipoNodo* PtNovo = (TipoNodo*) malloc(sizeof(TipoNodo));
+    //Novo nodo está vazio?
     if  (PtNovo == NULL)
+        //Retorna 1 para erro
         return 1;
+    //Senão
     else
     {
+        //Info do Novo nodo recebe os dados desejados
         PtNovo->Info=Dados;
+        //Elo do Novo nodo aponta para a lista
         PtNovo->Elo=*PtLista; 
+        //Lista recebe a lista de com Novo inserido
         *PtLista = PtNovo;
         return 0;
     }
@@ -122,6 +144,7 @@ int insereIni(TipoNodo **PtLista, int Dados){
 void mostra(TipoNodo *PtLista)
 {
     TipoNodo *p;
+    //Mostra a Info dos Nodo até encontrar o último elemento apontando para Nulo
     for( p = PtLista; p != NULL; p = p->Elo)
         printf("%d\t",p->Info);
 }
@@ -156,27 +179,34 @@ int removeNodo(TipoNodo **PtLista, int K){
 int acessoNodo(TipoNodo **PtLista, int K){
     TipoNodo* PtK;
     
+    //Se K estiver antes da lista ou Lista vazia
     if (K < 1 || *PtLista == NULL)
         PtK = NULL;
     else{
         PtK = *PtLista;
+        //Enquanto não for o final da lista E não chegar em K, passa para o próximo Nodo
         while (PtK != NULL && K > 1){
             K -= 1;
             PtK = PtK->Elo;
         }
+        //Se chegou ao final da lista e K ainda não tiver sido alcançado
         if (K > 1)
             PtK = NULL;
     }
+    //Retorna o valor contido em K
     return PtK->Info;
 }
 
 // Destruição da lista encadeada
 void destruirLista(TipoNodo **PtLista){
     TipoNodo* PtRemover;
+
+    //Enquanto não chegar ao final da lista, elimina um nodo e passa o próximo
     while (*PtLista != NULL){
         PtRemover = *PtLista;
         *PtLista = PtRemover->Elo;
         free(PtRemover);
     }
+    //Após a lista estiver vazia, desaloca ela da memória
     free(*PtLista);
 }
