@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #define N 10
 
-typedef struct TipoNodo{
+typedef struct tipoNodo{
     int codigo;
     char nome[30];
     float altura;
@@ -97,39 +97,27 @@ void preencherNodo(TipoNodo *infoNodo){
 
 int insertInicio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, TipoNodo infoNodo){
     int i;
-    // Se o início da lista estiver no começo do arranjo E o final da lista no fim do arranjo (lista cheia)
     if ((IA == *IL) && (FA == *FL))
-        // Retorne 1 para erro
         return 1;
-    // Senão
     else{   
-            // O início da lista está fora do vetor? (lista vazia)
             if (*IL == -1)
-                // Início e fim da lista recebe 0
                 *IL = *FL = IA;
-            // Tem espaço entre o início da lista e o início do arranjo?
             else if (*IL > IA)
-                // Puxa o início da lista pra esquerda
                 *IL -= 1;
-            // Então ela não está cheia, vazia e nem possui espaço no início (só sobra espaço no fim)
             else{
-                // Empurra todos elementos para direita
                 for (i = *FL; i >= *IL; i--){
                     LL[i+1] = LL[i];
                 }
-                // Passa o final da lista para o próximo à direita
                 *FL += 1;
             }
-        // Atribui ao primeiro elemento da lista os dados desejado
         LL[*IL] = infoNodo;
-        // Retorna 0 para sucesso
         return 0;
     }
 }
 
 int insertMeio(TipoNodo LL[], int *FL, int *IL, int IA, int FA, int K, TipoNodo infoNodo){
     int i;
-    
+
     if (((IA == *IL) && (FA == *FL)) || (K > *FL - *IL + 2) || (K <= 0) || (K > FA))
         return 1;
     else 
